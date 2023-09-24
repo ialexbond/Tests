@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests:project xmlns:tests="http://maven.apache.org/POM/4.0.0"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <tests:modelVersion>4.0.0</tests:modelVersion>
+
+    <tests:groupId>org.example</tests:groupId>
+    <tests:artifactId>Tests</tests:artifactId>
+    <tests:version>1.0-SNAPSHOT</tests:version>
+
+    <tests:properties>
+        <tests:maven.compiler.source>17</tests:maven.compiler.source>
+        <tests:maven.compiler.target>17</tests:maven.compiler.target>
+        <tests:project.build.sourceEncoding>UTF-8</tests:project.build.sourceEncoding>
+    </tests:properties>
+    <tests:dependencies>
+        <tests:dependency>
+            <tests:groupId>org.junit.jupiter</tests:groupId>
+            <tests:artifactId>junit-jupiter</tests:artifactId>
+            <tests:version>RELEASE</tests:version>
+            <tests:scope>test</tests:scope>
+        </tests:dependency>
+        <tests:dependency>
+            <tests:groupId>io.appium</tests:groupId>
+            <tests:artifactId>java-client</tests:artifactId>
+            <tests:version>8.3.0</tests:version>
+            <tests:scope>test</tests:scope>
+        </tests:dependency>
+        <tests:dependency>
+            <tests:groupId>io.qameta.allure</tests:groupId>
+            <tests:artifactId>allure-java-commons</tests:artifactId>
+            <tests:version>2.21.0</tests:version>
+            <tests:scope>test</tests:scope>
+        </tests:dependency>
+        <tests:dependency>
+            <tests:groupId>org.slf4j</tests:groupId>
+            <tests:artifactId>slf4j-api</tests:artifactId>
+            <tests:version>2.0.7</tests:version>
+        </tests:dependency>
+        <tests:dependency>
+            <tests:groupId>org.slf4j</tests:groupId>
+            <tests:artifactId>slf4j-nop</tests:artifactId>
+            <tests:version>2.0.7</tests:version>
+        </tests:dependency>
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5 -->
+        <tests:dependency>
+            <tests:groupId>io.qameta.allure</tests:groupId>
+            <tests:artifactId>allure-junit5</tests:artifactId>
+            <tests:version>2.24.0</tests:version>
+            <tests:scope>test</tests:scope>
+        </tests:dependency>
+        <!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
+        <tests:dependency>
+            <tests:groupId>com.codeborne</tests:groupId>
+            <tests:artifactId>selenide</tests:artifactId>
+            <tests:version>6.18.0</tests:version>
+        </tests:dependency>
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-selenide -->
+        <tests:dependency>
+            <tests:groupId>io.qameta.allure</tests:groupId>
+            <tests:artifactId>allure-selenide</tests:artifactId>
+            <tests:version>2.24.0</tests:version>
+        </tests:dependency>
+        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
+        <tests:dependency>
+            <tests:groupId>org.junit.jupiter</tests:groupId>
+            <tests:artifactId>junit-jupiter-engine</tests:artifactId>
+            <tests:version>5.10.0</tests:version>
+            <tests:scope>test</tests:scope>
+        </tests:dependency>
+        <!-- https://mvnrepository.com/artifact/org.aeonbits.owner/owner -->
+        <tests:dependency>
+            <tests:groupId>org.aeonbits.owner</tests:groupId>
+            <tests:artifactId>owner</tests:artifactId>
+            <tests:version>1.0.12</tests:version>
+        </tests:dependency>
+    </tests:dependencies>
+</tests:project>
