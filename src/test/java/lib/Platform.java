@@ -9,12 +9,10 @@ public class Platform {
     private static final String PLATFORM_ANDROID = "android";
     private static final String APPIUM_ANDROID_URL = "http://0.0.0.0:4723";
     private static Platform instance;
-    private Platform(){}
+    public Platform(RemoteWebDriver driver){}
 
     public static Platform getInstance() {
-        if (instance == null) {
-            instance = new Platform();
-        }
+
         return instance;
     }
 
