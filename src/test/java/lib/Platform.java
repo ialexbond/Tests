@@ -1,42 +1,57 @@
 package lib;
 
 import io.appium.java_client.android.AndroidDriver;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
-
 import java.net.URL;
 
 public class Platform {
-    protected RemoteWebDriver driver;
+    private static final String PLATFORM_ANDROID = "android";
+    private static final String APPIUM_ANDROID_URL = "http://0.0.0.0:4723";
+    private static Platform instance;
+    private Platform(){}
 
-    public static RemoteWebDriver getDriver() throws Exception {
-        URL URL = new URL("http://0.0.0.0:4723");
-        return new AndroidDriver(URL, getAndroidDesiredCapabilities());
+    public static Platform getInstance() {
+        if (instance == null) {
+            instance = new Platform();
+        }
+        return instance;
     }
 
-    private static DesiredCapabilities getAndroidDesiredCapabilities(){
+    public RemoteWebDriver getDriver() throws Exception {
+        URL URL_ANDROID = new URL(APPIUM_ANDROID_URL);
+        if (this.isAndroid()){
+            return new AndroidDriver(URL_ANDROID, this.getAndroidDesiredCapabilities());
+        }else throw new Exception("Cannot detect type of the driver. Platform value: " + this.getPlatformVar());
+    }
+
+    public boolean isAndroid() {return isPlatform();}
+
+    private DesiredCapabilities getAndroidDesiredCapabilities(){
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("autoGrantPermissions", true);
         capabilities.setCapability("unicodeKeyboard", "true");
         capabilities.setCapability("resetKeyboard", "true");
 
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("deviceName", "and1313");
-        capabilities.setCapability("platformVersion", "13.0");
+        capabilities.setCapability("deviceName", "and11");
+        capabilities.setCapability("platformVersion", "11.0");
         capabilities.setCapability("automationName", "UiAutomator2");
-        capabilities.setCapability("appPackage", "com.riesapp.preRelease");
+        capabilities.setCapability("appPackage", "com.riesapp.debug");
         capabilities.setCapability("appActivity", "com.riesapp.features.root.RootActivity");
-        capabilities.setCapability("app", "C:\\Users\\SERGEY\\Documents\\UITests\\apk\\ries-ries-preRelease.apk");
+        capabilities.setCapability("app", "C:\\Users\\SERGEY\\Documents\\UITests\\apk\\ries-ries-debug.apk");
         return capabilities;
     }
 
-    @BeforeEach
-    public void setUp() throws Exception { driver = getDriver(); }
 
-    @AfterEach
-    public void tearDown(){
-        driver.quit();
+    private boolean isPlatform() {
+        String platform = this.getPlatformVar();
+        return Platform.PLATFORM_ANDROID.equals(platform);
     }
+
+    public String getPlatformVar()
+    {
+        return System.getenv("PLATFORM");
+    }
+
 }
