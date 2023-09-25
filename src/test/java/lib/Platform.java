@@ -6,7 +6,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.URL;
 
 public class Platform {
-    protected RemoteWebDriver driver;
 
     public static RemoteWebDriver getDriver() throws Exception {
         URL URL = new URL("http://0.0.0.0:4723");
