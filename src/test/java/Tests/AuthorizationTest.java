@@ -13,10 +13,6 @@ public class AuthorizationTest extends CoreTestCase {
     public void authTest() {
         AuthPageObject Auth = new AuthPageObject(driver);
 
-        Auth.waitForLoginField();
-        Auth.fillingLogin(login);
-        Auth.fillingPassword(password);
-        Auth.pressLoginButton();
-        Auth.assertIfObjectTab();
+        Auth.authStart(login, password);
     }
 }

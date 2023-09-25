@@ -14,6 +14,18 @@ public class AuthPageObject extends MainPageObject {
         LOGIN_BUTTON = "xpath://*[@resource-id='com.riesapp.debug:id/authButton']",
         SEARCH_BUTTON = "xpath://*[@resource-id='com.riesapp.debug:id/searchButton']";
 
+    public void authStart(String login, String password){
+        this.waitForElementPresent(LOGIN_FIELD, "Cannot see the login field", 7);
+        this.waitForElementAndClick(LOGIN_FIELD, "The login field was not clicked", 5);
+        this.waitForElementAndSendKeys(LOGIN_FILED_EDIT, login, "No login was entered in the login field", 5);
+        this.waitForElementAndClick(PASSWORD_FIELD, "The password field was not clicked", 5);
+        this.waitForElementAndSendKeys(PASSWORD_FILED_EDIT, password, "No password was entered in the password field", 5);
+        this.waitForElementPresent(LOGIN_BUTTON, "Cannot see the login button", 5);
+        this.waitForElementAndClick(LOGIN_BUTTON, "The login button has not been clicked", 5);
+        this.waitForElementPresent(SEARCH_BUTTON, "Cannot see the search button", 5);
+        this.assertElementIsPresent(SEARCH_BUTTON, "The search button was not found");
+    }
+
 
     public void waitForLoginField(){
         this.waitForElementPresent(LOGIN_FIELD, "Cannot see the login field", 7);
