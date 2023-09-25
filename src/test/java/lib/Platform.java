@@ -16,7 +16,7 @@ public class Platform {
         return instance;
     }
 
-    public RemoteWebDriver getDriver() throws Exception {
+    public static RemoteWebDriver getDriver() throws Exception {
         URL URL_ANDROID = new URL(APPIUM_ANDROID_URL);
         if (this.isAndroid()){
             return new AndroidDriver(URL_ANDROID, this.getAndroidDesiredCapabilities());
