@@ -21,15 +21,15 @@ public class ObjectPageObject extends MainPageObject {
     public void clickBlocksMaterial(String wallMaterial){
         String wallsMaterialByXpath = getXpathByMaterialWalls(wallMaterial);
 
-        this.waitForElementPresent(wallsMaterialByXpath, "Cannot see wall material " + wallMaterial, 10);
-        this.waitForElementAndClick(wallsMaterialByXpath, "Cannot see wall material " + wallMaterial + " and click", 5);
+        this.waitForElementPresent(wallsMaterialByXpath, "Cannot see material wall " + wallMaterial, 10);
+        this.waitForElementAndClick(wallsMaterialByXpath, "Cannot see material wall " + wallMaterial + " and click", 5);
     }
 
     public void clickPanelsMaterial(String wallMaterial){
         String wallsMaterialByXpath = getXpathByMaterialWalls(wallMaterial);
 
-        this.waitForElementPresent(wallsMaterialByXpath, "Cannot see wall material " + wallMaterial, 5);
-        this.waitForElementAndClick(wallsMaterialByXpath, "Cannot see wall material " + wallMaterial + " and click", 5);
+        this.waitForElementPresent(wallsMaterialByXpath, "Cannot see material wall " + wallMaterial, 5);
+        this.waitForElementAndClick(wallsMaterialByXpath, "Cannot see material wall " + wallMaterial + " and click", 5);
     }
     public void clickDone(){
         this.waitForElementAndClick(DONE_BUTTON, "Cannot see the done button", 5);
