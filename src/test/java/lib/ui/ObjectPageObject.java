@@ -29,7 +29,7 @@ public class ObjectPageObject extends MainPageObject {
         String wallsMaterialByXpath = getXpathByMaterialWalls(wallMaterial);
 
         this.waitForElementPresent(wallsMaterialByXpath, "Cannot see wall material " + wallMaterial, 5);
-        this.waitForElementAndClick(wallsMaterialByXpath, "Cannot see wall material " + wallMaterial + " and not clicked", 5);
+        this.waitForElementAndClick(wallsMaterialByXpath, "Cannot see wall material " + wallMaterial + " and click", 5);
     }
     public void clickDone(){
         this.waitForElementAndClick(DONE_BUTTON, "Cannot see the done button", 5);
@@ -41,7 +41,6 @@ public class ObjectPageObject extends MainPageObject {
     }
 
     public static String getXpathByMaterialWalls(String wallMaterial){
-        return MATERIAL_WALL_TYPE_TPL.replace("{wallMaterial}", wallMaterial
-        );
+        return MATERIAL_WALL_TYPE_TPL.replace("{wallMaterial}", wallMaterial);
     }
 }
