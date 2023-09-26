@@ -11,24 +11,24 @@ public class ObjectPageObject extends MainPageObject {
             MATERIAL_WALLS_FILTER = "xpath://*[contains(@text,'Материал стен')]",
             MATERIAL_WALLS_FILTER_SELECTED = "xpath://*[contains(@text,'Выбрано: 2')]",
             DONE_BUTTON = "xpath://*[contains(@text,'Готово')]",
-            MATERIAL_WALL_TYPE_TPL = "xpath://*[contains(@text,'{firstMaterialWalls}')]";
+            MATERIAL_WALL_TYPE_TPL = "xpath://*[contains(@text,'{selectedMaterials}')]";
     public void clickMaterialWallsFilter(){
         this.swipeUpToFindElement(MATERIAL_WALLS_FILTER, "The material walls filter cannot be found with a swipe", 5);
         this.waitForElementAndClick(MATERIAL_WALLS_FILTER, "The material walls filter was not clicked", 5);
     }
 
-    public void clickWoodFilter(String firstMaterialWalls){
-        String materialFirstWallsXpath = getXpathByMaterialWalls(firstMaterialWalls);
+    public void clickBlocksFilter(String wallMaterial){
+        String materialWallsFirstXpath = getXpathByMaterialWalls(wallMaterial);
 
-        this.waitForElementPresent(materialFirstWallsXpath, "Cannot see the wood material", 5);
-        this.waitForElementAndClick(materialFirstWallsXpath, "The wood material filter was not clicked", 5);
+        this.waitForElementPresent(materialWallsFirstXpath, "Cannot see the blocks material", 10);
+        this.waitForElementAndClick(materialWallsFirstXpath, "The blocks material filter was not clicked", 5);
     }
 
-    public void clickPanelsMaterial(String secondMaterialWalls){
-        String materialSecondWallsXpath = getXpathByMaterialWalls(secondMaterialWalls);
+    public void clickPanelsMaterial(String wallMaterial){
+        String materialWallsSecondXpath = getXpathByMaterialWalls(wallMaterial);
 
-        this.waitForElementPresent(materialSecondWallsXpath, "Cannot see the panel material", 5);
-        this.waitForElementAndClick(materialSecondWallsXpath, "The panel material filter was not clicked", 5);
+        this.waitForElementPresent(materialWallsSecondXpath, "Cannot see the panel material", 5);
+        this.waitForElementAndClick(materialWallsSecondXpath, "The panel material filter was not clicked", 5);
     }
     public void clickDone(){
         this.waitForElementAndClick(DONE_BUTTON, "Cannot see the done button", 5);
@@ -39,7 +39,7 @@ public class ObjectPageObject extends MainPageObject {
         this.assertElementIsPresent(MATERIAL_WALLS_FILTER_SELECTED, "Wall material not selected");
     }
 
-    private static String getXpathByMaterialWalls(String firstMaterialWalls){
-        return MATERIAL_WALL_TYPE_TPL.replace("{firstMaterialWalls}", firstMaterialWalls);
+    public static String getXpathByMaterialWalls(String selectMaterials){
+        return MATERIAL_WALL_TYPE_TPL.replace("{selectedMaterials}", selectMaterials);
     }
 }

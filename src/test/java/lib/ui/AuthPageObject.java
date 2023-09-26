@@ -22,7 +22,7 @@ public class AuthPageObject extends MainPageObject {
         this.waitForElementAndSendKeys(PASSWORD_FILED_EDIT, password, "No password was entered in the password field", 5);
         this.waitForElementPresent(LOGIN_BUTTON, "Cannot see the login button", 5);
         this.waitForElementAndClick(LOGIN_BUTTON, "The login button has not been clicked", 5);
-        this.waitForElementPresent(SEARCH_BUTTON, "Cannot see the search button", 5);
+        this.waitForElementPresent(SEARCH_BUTTON, "Cannot see the search button", 10);
         this.assertElementIsPresent(SEARCH_BUTTON, "The search button was not found");
     }
 

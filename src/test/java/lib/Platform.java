@@ -24,7 +24,7 @@ public class Platform {
         capabilities.setCapability("automationName", "UiAutomator2");
         capabilities.setCapability("appPackage", "com.riesapp.debug");
         capabilities.setCapability("appActivity", "com.riesapp.features.root.RootActivity");
-        capabilities.setCapability("app", "C:\\Users\\SERGEY\\Documents\\UITests\\apk\\ries-ries-debug.apk");
+        capabilities.setCapability("app", "C:\\Users\\user\\Documents\\Tests\\apk\\ries-ries-debug.apk");
         return capabilities;
     }
 }

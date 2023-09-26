@@ -14,13 +14,11 @@ public class TemplatesTests extends CoreTestCase {
         AuthPageObject Auth = new AuthPageObject(driver);
         ObjectPageObject Object = new ObjectPageObject(driver);
 
-        String firstMaterialWalls = "Дерево";
-        String secondMaterialWalls = "Панели";
 
         Auth.authStart(login, password);
         Object.clickMaterialWallsFilter();
-        Object.clickWoodFilter(firstMaterialWalls);
-        Object.clickPanelsMaterial(secondMaterialWalls);
+        Object.clickBlocksFilter("Блоки");
+        Object.clickPanelsMaterial("Панели");
         Object.clickDone();
         Object.assertIfMaterialWallsSelected();
     }
