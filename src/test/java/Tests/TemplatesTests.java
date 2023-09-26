@@ -17,7 +17,7 @@ public class TemplatesTests extends CoreTestCase {
 
         Auth.authStart(login, password);
         Object.clickMaterialWallsFilter();
-        Object.clickBlocksFilter("Блоки");
+        Object.clickBlocksMaterial("Блоки");
         Object.clickPanelsMaterial("Панели");
         Object.clickDone();
         Object.assertIfMaterialWallsSelected();
