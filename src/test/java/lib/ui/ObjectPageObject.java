@@ -11,7 +11,7 @@ public class ObjectPageObject extends MainPageObject {
             MATERIAL_WALLS_FILTER = "xpath://*[contains(@text,'Материал стен')]",
             MATERIAL_WALLS_FILTER_SELECTED = "xpath://*[contains(@text,'Выбрано: 2')]",
             DONE_BUTTON = "xpath://*[contains(@text,'Готово')]",
-            MATERIAL_WALL_TYPE_TPL = "xpath://*[contains(@text,'{selectedMaterials}')]";
+            MATERIAL_WALL_TYPE_TPL = "xpath://*[contains(@text,'{materials}')]";
     public void clickMaterialWallsFilter(){
         this.swipeUpToFindElement(MATERIAL_WALLS_FILTER, "The material walls filter cannot be found with a swipe", 5);
         this.waitForElementAndClick(MATERIAL_WALLS_FILTER, "The material walls filter was not clicked", 5);
@@ -40,6 +40,6 @@ public class ObjectPageObject extends MainPageObject {
     }
 
     public static String getXpathByMaterialWalls(String selectMaterials){
-        return MATERIAL_WALL_TYPE_TPL.replace("{selectedMaterials}", selectMaterials);
+        return MATERIAL_WALL_TYPE_TPL.replace("{materials}", selectMaterials);
     }
 }
